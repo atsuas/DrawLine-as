@@ -44,6 +44,7 @@ public class Line : MonoBehaviour
         if (pointsCount >= 1 && Vector2.Distance(newPoint, GetLastPoint()) < pointsMinDistance)
             return;
 
+        //ListにnewPointを加える
         points.Add(newPoint);
         pointsCount++;
 
@@ -57,6 +58,7 @@ public class Line : MonoBehaviour
         lineRenderer.SetPosition(pointsCount - 1, newPoint);
 
         //EdgeCollider
+        //Listの要素を新しい配列にコピーする
         if (pointsCount > 1)
             edgeCollider.points = points.ToArray();
     }

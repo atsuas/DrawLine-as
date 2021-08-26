@@ -5,6 +5,7 @@ using UnityEngine;
 public class LineDrawer : MonoBehaviour
 {
     public GameObject LinePrefabs;
+    //レイヤーを定義
     public LayerMask CantDrawOverLayer;
     int CantDrawOverLayerIndex;
 
@@ -53,7 +54,7 @@ public class LineDrawer : MonoBehaviour
     private void Draw()
     {
         Vector2 MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.CircleCast(MousePos, LineWidth / 3f, Vector2.zero, 1f, CantDrawOverLayer); ;
+        RaycastHit2D hit = Physics2D.CircleCast(MousePos, LineWidth / 3f, Vector2.zero, 5f, CantDrawOverLayer); ;
 
         if (hit)
             EndDraw();
