@@ -17,19 +17,23 @@ public class Line : MonoBehaviour
 
     public Vector2 GetLastPoint()
     {
+        //voidついてないからReturnで返す
         return (Vector2)lineRenderer.GetPosition(pointsCount - 1);
     }
 
     public void UsePhysics(bool usePhysics)
     {
+        //iskinematicはtrueではない
         rb.isKinematic = !usePhysics;
     }
 
     public void SetLineColor(Gradient LineColor)
     {
+        //colorGradientはLineColor
         lineRenderer.colorGradient = LineColor;
     }
 
+    //Lineの幅を設定
     public void SetLineWidth(float width)
     {
         lineRenderer.startWidth = width;
